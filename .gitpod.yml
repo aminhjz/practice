@@ -1,6 +1,5 @@
 tasks:
-  - prebuild: ./gradlew build -x test
-    command: ./gradlew test
+  - command: ./gradlew test
 github:
   prebuilds:
     main: true

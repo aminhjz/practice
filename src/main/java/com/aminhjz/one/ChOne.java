@@ -88,6 +88,23 @@ public class ChOne {
         return string;
     }
 
+    public static String compress(char[] string){
+        String orig = new String(string);
+        char compressCh="\n";
+        int count=0;
+        for (int i=string.length-1; i>=0; i--){
+            char ch = string[i];
+            if (compressCh != ch){
+                compressCh = ch;
+                string[i] = " ";
+                count++;
+            } else {
+                
+            }
+        }
+        return orig;
+    }
+
     /**
      *
      */
