@@ -34,4 +34,23 @@ public class LinkedList<T> {
 
         return node.getValue();
     }
+
+    public void removeDuplicates(){
+        Node<T> node = head;
+        Node<T> runner = null;
+        Node<T> prev = null;
+        while (node.next != null){
+            while (runner.next != null){
+                if (runner != null && 
+                    prev != null && 
+                    runner.getValue().equals(node.getValue())){
+                    prev.next = runner.next;
+                }
+                prev = runner;
+                runner = runner.next;
+            }
+            runner = node;
+            node = node.next;
+        }
+    }
 }
