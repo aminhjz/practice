@@ -7,6 +7,7 @@ import static com.aminhjz.one.ChOne.encodeSpaces;
 import static com.aminhjz.one.ChOne.permutations;
 import static com.aminhjz.one.ChOne.uniqueCharString;
 import static com.aminhjz.one.ChOne.uniqueCharString2;
+import static com.aminhjz.one.ChOne.compress;
 
 public class ChOne {
 
@@ -26,6 +27,11 @@ public class ChOne {
         Assertions.assertFalse(permutations("qdrwd".toCharArray(), "qrdb".toCharArray()));
     }
 
+
+    @Test
+    public void testCompress(){
+        Assertions.assertEquals("a2c6b2",compress("aaccccccbb".toCharArray()));
+    }
 
     @Test
     public void testEncoding(){
