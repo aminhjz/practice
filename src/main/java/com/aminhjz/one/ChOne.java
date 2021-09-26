@@ -90,19 +90,24 @@ public class ChOne {
 
     public static String compress(char[] string){
         String orig = new String(string);
-        char compressCh="\n";
-        int count=0;
-        for (int i=string.length-1; i>=0; i--){
+        char compressCh='\n';
+        StringBuilder stb = new StringBuilder();
+        int count = 1;
+        for (int i=0; i < string.length; i++){
             char ch = string[i];
-            if (compressCh != ch){
-                compressCh = ch;
-                string[i] = " ";
+            if (compressCh == ch){
                 count++;
+            } else if (count != 1 ) {
+                stb.append(count);
+                count = 1;
+                stb.append(ch);
             } else {
-                
+                stb.append(ch);
             }
+            compressCh = ch;
         }
-        return orig;
+        stb.append(count);
+        return stb.toString();
     }
 
     /**
