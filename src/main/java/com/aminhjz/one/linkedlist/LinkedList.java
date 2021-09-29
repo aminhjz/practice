@@ -16,23 +16,31 @@ public class LinkedList<T> {
     }
 
     public void delete(int i){
-        Node<T> next = head.next;
-        Node<T> prev = null;;
-        for (int j=0; j <= i; j++){
-            prev = next;
-            next = head.next;
+        //arr: 1, 2, 3
+        //j=-;cur = 1;prev=null
+        //j=0;cur = 2;prev=1
+        //j=1;prev = 2;curr = 3
+        Node<T> current = head;
+        Node<T> prev = null;
+        for (int j=0; j < i; j++){
+            prev = current;
+            current = current.next;
         }
-        prev.next = next;
-        
+        //
+        if(prev == null){
+            head = current.next;
+        } else {
+            prev.next = current.next;
+        }
     }
 
     public T get(int index){
         Node<T> node = head;
-        for (int i=0; i < index; i++){
+        for (int i=0; i < index && node != null; i++){
             node = node.next;
         }
 
-        return node.getValue();
+        return node !=null? node.getValue(): null;
     }
 
     public void removeDuplicates(){
