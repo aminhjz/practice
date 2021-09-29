@@ -13,6 +13,7 @@ public class ChTwo {
         Node<T> runner = null;
         Node<T> prev = null;
         while (node.getNext() != null){
+            runner = node;
             while (runner.getNext() != null){
                 if (runner != null && 
                     prev != null && 
@@ -22,8 +23,9 @@ public class ChTwo {
                 prev = runner;
                 runner = runner.getNext();
             }
-            runner = node;
+        
             node = node.getNext();
+            prev = null;
         }
         return head;
     }
