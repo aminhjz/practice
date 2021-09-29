@@ -9,7 +9,7 @@ import static com.aminhjz.one.ChOne.uniqueCharString;
 import static com.aminhjz.one.ChOne.uniqueCharString2;
 import static com.aminhjz.one.ChOne.compress;
 
-public class ChOne {
+public class TestChOne {
 
     @Test
     public void testUnique(){
